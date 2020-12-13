@@ -82,6 +82,11 @@ def jePravouhly(a, b, c):
         return False
 
 def trojuhelnik():
+    """Calculate the length of the sides, the perimeter and
+    the area (if possible to calculate) of a triangle based on the entered 
+    coordinates of its three vertices.
+    Also calculate if the triangle is valid and if it is a right triangle.
+    """
     print("Zadejte souřadnice pro bod A na ose X: ")
     ax = float(input())
     print("Zadejte souřadnice pro bod A na ose Y: ")
