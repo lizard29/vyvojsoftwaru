@@ -29,6 +29,18 @@ def getObvod(a, b, c):
     return o
 
 def getObsah(a, b, c):
+    """Calculate the area of a triangle
+    
+    Return the area of the triangle rounded to 2 decimal places (if possible to calculate)
+    >>> getObsah(6, 4, 5) == 9.92
+    True
+    >>> getObsah(1, 1, 23) >= 0
+    False
+    >>> getObsah(5, 5, 5)
+    10.83
+    >>> getObsah(2, 4, 8)
+    -1
+    """
     s = (a + b + c) / 2
     m = s * (s - a) * (s - b) * (s - c)
     if m >= 0:
