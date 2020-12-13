@@ -64,6 +64,18 @@ def jeSestrojitelny(a, b, c):
         return False
     
 def jePravouhly(a, b, c):
+    """Calculate if a triangle is a right triangle
+    
+    Return true if the triangle is a right triangle or false if it is not
+    >>> jePravouhly(3, 5, 4)
+    True
+    >>> jePravouhly(4, 3, 5)
+    True
+    >>> jePravouhly(5, 3, 4)
+    True
+    >>> jePravouhly(74, 73, 72)
+    False
+    """
     if math.pow(a, 2) == math.pow(b, 2) + math.pow(c, 2) or math.pow(b, 2) == math.pow(c, 2) + math.pow(a, 2) or math.pow(c, 2) == math.pow(a, 2) + math.pow(b, 2):
         return True
     else:
