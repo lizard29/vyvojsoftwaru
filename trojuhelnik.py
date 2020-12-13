@@ -1,8 +1,10 @@
+"""Import math library."""
 import math
 
+
 def delkaStrany(x1, y1, x2, y2):
-    """Calculate the length of a side of a triangle
-    
+    """Calculate the length of a side of a triangle.
+
     Return the length of the side rounded to 2 decimal places
     >>> delkaStrany(10, 10, 5, 5) == 7.07
     True
@@ -16,9 +18,10 @@ def delkaStrany(x1, y1, x2, y2):
     st = round(math.sqrt(str1+str2), 2)
     return st
 
+
 def getObvod(a, b, c):
-    """Calculate the perimeter of a triangle
-    
+    """Calculate the perimeter of a triangle.
+
     Return the perimeter of the triangle
     >>> getObvod(5, 10, 20) == 35
     True
@@ -28,10 +31,12 @@ def getObvod(a, b, c):
     o = a + b + c
     return o
 
+
 def getObsah(a, b, c):
-    """Calculate the area of a triangle
-    
-    Return the area of the triangle rounded to 2 decimal places (if possible to calculate)
+    """Calculate the area of a triangle.
+
+    Return the area of the triangle rounded to 2 decimal places
+    (if possible to calculate)
     >>> getObsah(6, 4, 5) == 9.92
     True
     >>> getObsah(1, 1, 23) >= 0
@@ -49,9 +54,10 @@ def getObsah(a, b, c):
         obs = -1
     return obs
 
+
 def jeSestrojitelny(a, b, c):
-    """Calculate if a triangle is valid
-    
+    """Calculate if a triangle is valid.
+
     Return true or false based on the validity of the triangle
     >>> jeSestrojitelny(50, 100, 1)
     False
@@ -62,10 +68,11 @@ def jeSestrojitelny(a, b, c):
         return True
     else:
         return False
-    
+
+
 def jePravouhly(a, b, c):
-    """Calculate if a triangle is a right triangle
-    
+    """Calculate if a triangle is a right triangle.
+
     Return true if the triangle is a right triangle or false if it is not
     >>> jePravouhly(3, 5, 4)
     True
@@ -76,14 +83,20 @@ def jePravouhly(a, b, c):
     >>> jePravouhly(74, 73, 72)
     False
     """
-    if math.pow(a, 2) == math.pow(b, 2) + math.pow(c, 2) or math.pow(b, 2) == math.pow(c, 2) + math.pow(a, 2) or math.pow(c, 2) == math.pow(a, 2) + math.pow(b, 2):
+    cond1 = math.pow(a, 2) == math.pow(b, 2) + math.pow(c, 2)
+    cond2 = math.pow(b, 2) == math.pow(c, 2) + math.pow(a, 2)
+    cond3 = math.pow(c, 2) == math.pow(a, 2) + math.pow(b, 2)
+    if cond1 or cond2 or cond3:
         return True
     else:
         return False
 
+
 def trojuhelnik():
-    """Calculate the length of the sides, the perimeter and
-    the area (if possible to calculate) of a triangle based on the entered 
+    """Calculate various properties of a triangle.
+
+    Calculate the length of the sides, the perimeter and
+    the area (if possible to calculate) of a triangle based on the entered
     coordinates of its three vertices.
     Also calculate if the triangle is valid and if it is a right triangle.
     """
@@ -121,26 +134,37 @@ def trojuhelnik():
     else:
         print("Trojúhelník není pravoúhlý")
 
+
 def test_delkaStrany():
+    """Unit test for delkaStrany() function."""
     assert delkaStrany(14, 8, 3, 65) == 58.05
-    assert (delkaStrany(47, 65, 3, 12) == 68.88) == True
+    assert (delkaStrany(47, 65, 3, 12) == 68.88) is True
+
 
 def test_getObvod():
+    """Unit test for getObvod() function."""
     assert getObvod(23.45, 32.01, 41.34) == 96.8
-    assert (getObvod(1.01, 2.35, 9.87) == 13.23) == True
+    assert (getObvod(1.01, 2.35, 9.87) == 13.23) is True
+
 
 def test_getObsah():
+    """Unit test for getObsah() function."""
     assert getObsah(14, 17, 23) == 118.49
-    assert (getObsah(8, 15, 34) >= 0) == False
-    
+    assert (getObsah(8, 15, 34) >= 0) is False
+
+
 def test_jeSestrojitelny():
-    assert jeSestrojitelny(1, 88, 55) == False
-    assert jeSestrojitelny(76, 67, 55) == True
+    """Unit test for jeSestrojitelny() function."""
+    assert jeSestrojitelny(1, 88, 55) is False
+    assert jeSestrojitelny(76, 67, 55) is True
+
 
 def test_jePravouhly():
-    assert jePravouhly(25, 16, 9) == False
-    assert jePravouhly(5, 3, 4) == True
-    
+    """Unit test for jePravouhly() function."""
+    assert jePravouhly(25, 16, 9) is False
+    assert jePravouhly(5, 3, 4) is True
+
+
 if __name__ == "__main__":
     test_delkaStrany()
     test_getObvod()
