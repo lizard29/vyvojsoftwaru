@@ -12,6 +12,15 @@ def getObvod(a, b, c):
     o = a + b + c
     return o
 
+def getObsah(a, b, c):
+    s = (a + b + c) / 2
+    m = s * (s - a) * (s - b) * (s - c)
+    if m >= 0:
+        obs = math.sqrt(m)
+    else:
+        obs = -1
+    return obs
+
 print("Zadejte souřadnice pro bod A na ose X: ")
 ax = float(input())
 print("Zadejte souřadnice pro bod A na ose Y: ")
@@ -36,10 +45,8 @@ else:
     print("Trojúhelník není sestrojitelný")
 obvod = getObvod(stra, strb, strc)
 print("Obvod trojúhelníku je " + str(round(obvod, 2)) + " cm")
-s = (stra + strb + strc) / 2
-m = s * (s - stra) * (s - strb) * (s - strc)
-if m >= 0:
-    obsah = math.sqrt(m)
+obsah = getObsah(stra, strb, strc)
+if obsah >= 0:
     print("Obsah trojúhelníku je " + str(round(obsah, 2)) + " cm")
 else:
     print("Obsah nelze vypočítat (záporné číslo pod odmocninou)")
