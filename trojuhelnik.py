@@ -17,6 +17,14 @@ def delkaStrany(x1, y1, x2, y2):
     return st
 
 def getObvod(a, b, c):
+    """Calculate the perimeter of a triangle
+    
+    Return the perimeter of the triangle
+    >>> getObvod(5, 10, 20) == 35
+    True
+    >>> getObvod(1, 2, 3)
+    6
+    """
     o = a + b + c
     return o
 
