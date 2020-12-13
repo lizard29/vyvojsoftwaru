@@ -8,6 +8,10 @@ def delkaStrany(x1, y1, x2, y2):
     st = math.sqrt(str1+str2)
     return st
 
+def getObvod(a, b, c):
+    o = a + b + c
+    return o
+
 print("Zadejte souřadnice pro bod A na ose X: ")
 ax = float(input())
 print("Zadejte souřadnice pro bod A na ose Y: ")
@@ -30,7 +34,7 @@ if stra + strb > strc and strb + strc > stra and strc + stra > strb:
     print("Trojúhelník je sestrojitelný")
 else:
     print("Trojúhelník není sestrojitelný")
-obvod = stra + strb + strc
+obvod = getObvod(stra, strb, strc)
 print("Obvod trojúhelníku je " + str(round(obvod, 2)) + " cm")
 s = (stra + strb + strc) / 2
 m = s * (s - stra) * (s - strb) * (s - strc)
