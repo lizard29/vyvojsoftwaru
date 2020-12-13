@@ -1,4 +1,13 @@
 import math
+
+def delkaStrany(x1, y1, x2, y2):
+    str1 = x2-x1
+    str2 = y2-y1
+    str1 = math.pow(2, str1)
+    str2 = math.pow(2, str2)
+    st = math.sqrt(str1+str2)
+    return st
+
 print("Zadejte souřadnice pro bod A na ose X: ")
 ax = float(input())
 print("Zadejte souřadnice pro bod A na ose Y: ")
@@ -11,23 +20,11 @@ print("Zadejte souřadnice pro bod C na ose X: ")
 cx = float(input())
 print("Zadejte souřadnice pro bod C na ose Y: ")
 cy = float(input())
-stra1 = bx-cx
-stra2 = by-cy
-stra1 = math.pow(2, stra1)
-stra2 = math.pow(2, stra2)
-stra = math.sqrt(stra1+stra2)
+stra = delkaStrany(cx, cy, bx, by)
 print("Délka strany a: " + str(round(stra, 2)) + " cm")
-strb1 = cx-ax
-strb2 = cy-ay
-strb1 = math.pow(2, strb1)
-strb2 = math.pow(2, strb2)
-strb = math.sqrt(strb1+strb2)
+strb = delkaStrany(ax, ay, cx, cy)
 print("Délka strany b: " + str(round(strb, 2)) + " cm")
-strc1 = ax-bx
-strc2 = ay-by
-strc1 = math.pow(2, strc1)
-strc2 = math.pow(2, strc2)
-strc = math.sqrt(strc1+strc2)
+strc = delkaStrany(bx, by, ax, ay)
 print("Délka strany c: " + str(round(strc, 2)) + " cm")
 if stra + strb > strc and strb + strc > stra and strc + stra > strb:
     print("Trojúhelník je sestrojitelný")
@@ -46,3 +43,4 @@ if math.pow(2, stra) == math.pow(2, strb) + math.pow(2, strc) or math.pow(2, str
     print("Trojúhelník je pravoúhlý")
 else:
     print("Trojúhelník není pravoúhlý")
+    
