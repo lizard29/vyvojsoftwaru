@@ -120,4 +120,30 @@ def trojuhelnik():
         print("Trojúhelník je pravoúhlý")
     else:
         print("Trojúhelník není pravoúhlý")
+
+def test_delkaStrany():
+    assert delkaStrany(14, 8, 3, 65) == 58.05
+    assert (delkaStrany(47, 65, 3, 12) == 68.88) == True
+
+def test_getObvod():
+    assert getObvod(23.45, 32.01, 41.34) == 96.8
+    assert (getObvod(1.01, 2.35, 9.87) == 13.23) == True
+
+def test_getObsah():
+    assert getObsah(14, 17, 23) == 118.49
+    assert (getObsah(8, 15, 34) >= 0) == False
     
+def test_jeSestrojitelny():
+    assert jeSestrojitelny(1, 88, 55) == False
+    assert jeSestrojitelny(76, 67, 55) == True
+
+def test_jePravouhly():
+    assert jePravouhly(25, 16, 9) == False
+    assert jePravouhly(5, 3, 4) == True
+    
+if __name__ == "__main__":
+    test_delkaStrany()
+    test_getObvod()
+    test_getObsah()
+    test_jeSestrojitelny()
+    test_jePravouhly()
