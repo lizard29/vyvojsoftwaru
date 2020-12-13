@@ -42,4 +42,3 @@ if math.pow(2, stra) == math.pow(2, strb) + math.pow(2, strc) or math.pow(2, str
     print("Trojúhelník je pravoúhlý")
 else:
     print("Trojúhelník není pravoúhlý")
-end
