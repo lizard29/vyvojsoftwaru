@@ -1,10 +1,18 @@
 import math
 
 def delkaStrany(x1, y1, x2, y2):
+    """Calculate the length of a side of a triangle
+    
+    Return the length of the side
+    >>> delkaStrany(5, 5, 10, 10) == 8.0
+    True
+    >>> delkaStrany(6, 4, 2, 3)
+    0.75
+    """
     str1 = x2-x1
     str2 = y2-y1
-    str1 = math.pow(2, str1)
-    str2 = math.pow(2, str2)
+    str1 = math.pow(str1, 2)
+    str2 = math.pow(str2, 2)
     st = math.sqrt(str1+str2)
     return st
 
@@ -28,7 +36,7 @@ def jeSestrojitelny(a, b, c):
         return False
     
 def jePravouhly(a, b, c):
-    if math.pow(2, a) == math.pow(2, b) + math.pow(2, c) or math.pow(2, b) == math.pow(2, c) + math.pow(2, a) or math.pow(2, c) == math.pow(2, a) + math.pow(2, b):
+    if math.pow(a, 2) == math.pow(b, 2) + math.pow(c, 2) or math.pow(b, 2) == math.pow(c, 2) + math.pow(a, 2) or math.pow(c, 2) == math.pow(a, 2) + math.pow(b, 2):
         return True
     else:
         return False
