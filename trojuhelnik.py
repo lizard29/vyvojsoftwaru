@@ -21,6 +21,18 @@ def getObsah(a, b, c):
         obs = -1
     return obs
 
+def jeSestrojitelny(a, b, c):
+    if a + b > c and b + c > a and c + a > b:
+        return True
+    else:
+        return False
+    
+def jePravouhly(a, b, c):
+    if math.pow(2, a) == math.pow(2, b) + math.pow(2, c) or math.pow(2, b) == math.pow(2, c) + math.pow(2, a) or math.pow(2, c) == math.pow(2, a) + math.pow(2, b):
+        return True
+    else:
+        return False
+
 print("Zadejte souřadnice pro bod A na ose X: ")
 ax = float(input())
 print("Zadejte souřadnice pro bod A na ose Y: ")
@@ -39,7 +51,7 @@ strb = delkaStrany(ax, ay, cx, cy)
 print("Délka strany b: " + str(round(strb, 2)) + " cm")
 strc = delkaStrany(bx, by, ax, ay)
 print("Délka strany c: " + str(round(strc, 2)) + " cm")
-if stra + strb > strc and strb + strc > stra and strc + stra > strb:
+if jeSestrojitelny(stra, strb, strc):
     print("Trojúhelník je sestrojitelný")
 else:
     print("Trojúhelník není sestrojitelný")
@@ -50,7 +62,7 @@ if obsah >= 0:
     print("Obsah trojúhelníku je " + str(round(obsah, 2)) + " cm")
 else:
     print("Obsah nelze vypočítat (záporné číslo pod odmocninou)")
-if math.pow(2, stra) == math.pow(2, strb) + math.pow(2, strc) or math.pow(2, strb) == math.pow(2, strc) + math.pow(2, stra) or math.pow(2, strc) == math.pow(2, stra) + math.pow(2, strb):
+if jePravouhly(stra, strb, strc):
     print("Trojúhelník je pravoúhlý")
 else:
     print("Trojúhelník není pravoúhlý")
