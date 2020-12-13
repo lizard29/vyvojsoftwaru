@@ -3,7 +3,7 @@ import math
 def delkaStrany(x1, y1, x2, y2):
     """Calculate the length of a side of a triangle
     
-    Return the length of the side
+    Return the length of the side rounded to 2 decimal places
     >>> delkaStrany(10, 10, 5, 5) == 7.07
     True
     >>> delkaStrany(6, 4, 2, 3)
